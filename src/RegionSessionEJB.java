@@ -24,7 +24,7 @@
  * This class is the implementation for the
  *
  */
-package com.itis.comm.ejb.basic.region; 
+package com.itis.comm.ejb.basic.region;
 
 import javax.naming.NamingException;
 
