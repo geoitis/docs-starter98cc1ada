@@ -55,31 +55,68 @@ public class RegionSessionEJB extends SessionBase implements RegionConstants {
 	}
 
 	@Override
+	/**
+	 * Retrieves the name of the table.
+	 *
+	 * @return The name of the table as a String.
+ 	*/
 	public String getTableName() {
 		return TABLE;
 	}
 
 	@Override
+	/**
+	 * Returns the ORDER_BY value.
+	 *
+	 * @return the ORDER_BY value
+ 	*/
 	public String getOrderBy() {
 		return ORDER_BY;
 	}
 
 	@Override
+	/**
+	 * Creates a new instance of AbstractValueObject by instantiating RegionValueObject.
+	 *
+	 * @return a new instance of AbstractValueObject
+	 * @throws SomeException if there is an issue with creating the value object
+ 	*/
 	public AbstractValueObject createValueObject() {
 		return new RegionValueObject();
 	}
 
 	@Override
+	/**
+	 * Process the child with the given name and reindex it.
+	 *
+	 * @param childName The name of the child to be processed.
+	 * @param parent The parent object of type AbstractValueObject.
+	 * @param child The child object of type AbstractValueObject.
+	 * @param index The index of the child.
+	 * @throws SomeException If an error occurs during processing.
+ 	*/
 	protected void processChild(String childName, AbstractValueObject parent, AbstractValueObject child, int index) {
 		// put reindexing of child here
 	}
 
 	@Override
+	/**
+	 * Checks if the specified child entity supports cascade delete.
+	 *
+	 * @param name the name of the child entity
+	 * @return true if the child entity supports cascade delete, false otherwise
+	 * @throws NullPointerException if the specified name is null
+ 	*/
 	protected boolean isCascadeDeleteChild(String name) {
 		return true;
 	}
 
 	@Override
+	/**
+	 * Initializes the session with necessary listeners and handlers.
+	 *
+	 * @throws NamingException if a naming exception occurs during initialization
+ 	*/
 	protected void init() throws NamingException {
 		super.init();
 
